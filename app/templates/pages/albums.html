@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block title%} {{super() + ' - Albums'}} {% endblock %}
+
+{% block page_content %}
+<style>
+    .content-block {
+        height: 100%;
+    }
+
+    .add-new-albums-text-block {
+        height: 100%;
+        min-height: 200px;
+    }
+
+    .card-img-top {
+        object-fit: cover;
+        height: 200px;
+    }
+</style>
+
+<div class="content-block d-flex flex-column pt-3">
+    <div class="albums-block">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            
+            {% for album in albums %}
+            <div class="col">
+                <div class="card bg-light h-100">
+                  <img src="../../static/photos/albums/{{ album.id }}.jpg" class="card-img-top" alt="...">
+                  <div class="card-body d-flex flex-column justify-content-between">
+                    <h5 class="card-title">{{ album.name }}</h5>
+                    <p class="card-text">{{ album.description }}</p>
+                        <div>
+                        <a href="{{ url_for('main.show_album', album_id=album.id) }}" class="btn btn-primary">More info</a>
+                            {% if album.creator_id == user.id %}
+                                <a href="{{ url_for('main.edit_album', album_id=album.id) }}" class="btn btn-warning">Edit</a>
+                                <a href="{{ url_for('main.delete_album', album_id=album.id) }}" class="btn btn-warning">Delete</a>
+                            {% endif %}
+                        </div>
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+
+        </div>
+    </div>
+    <div class="add-new-albums-text-block d-flex align-items-center justify-content-center display-6">
+        {% if current_user.is_authenticated %}
+        <div>
+            <span>You can add new Album</span>
+            <a class="btn btn-primary" href="{{ url_for('main.add_new_album') }}" role="button">Add</a>
+        </div>
+        {% else %}
+        <div>
+            <span>You can add new album but you should be autorized, you can do it.</span>
+            <a class="btn btn-primary" href="{{ url_for('auth.autorization') }}" role="button">Sign In</a>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

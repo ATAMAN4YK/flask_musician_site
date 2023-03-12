@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% from "bootstrap5/form.html" import render_form %}
+
+{% block title%} {{super() + ' - New Album'}} {% endblock %}
+
+{% block page_content %}
+<style>
+    .add-form {
+        min-width: 400px;
+        max-width: 500px;
+        margin-bottom: 30px;
+    }
+</style>
+
+<div class="d-flex justify-content-center mt-5 flex-column align-items-center">
+    <div class="album-name h3">Add new album</div>
+    <div class="add-form">
+        {{ render_form(form, button_style='success') }}
+    </div>
+</div>
+{% endblock %}

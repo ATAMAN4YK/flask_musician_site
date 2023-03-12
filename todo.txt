@@ -1,0 +1,11 @@
+3/12/2023 ~ 12.03.2023
+[+][!] - Change albums and user models, add some new variables and set nullable
+[+] - Create album page
+[-] - Improve user page
+[-] - Create project info page
+[+] - Create album edit page
+[-][!] - Before deleting ask again
+[-][!] - To clean my code
+[-][!] - Move all setting to config file like paths and so on
+[-] - Change site to full-page
+[-] - Add metadata to css ( Adaptive site )

@@ -1,0 +1,125 @@
+{% from 'bootstrap5/nav.html' import render_nav_item %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% block head %}
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon" />
+        {% block styles %}
+        <!-- Bootstrap CSS -->
+        {{ bootstrap.load_css() }} {% endblock %}
+
+        <title>{% block title %}XXXTentacion{% endblock %}</title>
+        {% endblock %}
+    </head>
+    <body>
+
+        <style>
+            main {
+                flex: auto;
+            }
+
+            .container {
+                height: 100vh;
+            }
+
+            .username {
+                text-transform: uppercase;
+                margin-left: 15px;
+                color: white;
+                text-decoration: none;
+            }
+        </style>
+
+        {% block content %}
+        <div class="container d-flex flex-column justify-content-between position-relative">
+            <header>
+                <nav class="navbar navbar-expand-lg bg-primary">
+                    <div class="container-fluid">
+                        <button
+                            class="navbar-toggler"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#navbarNavAltMarkup"
+                            aria-controls="navbarNavAltMarkup"
+                            aria-expanded="false"
+                            aria-label="Toggle navigation"
+                        >   
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                            <div class="navbar-nav">
+                                {{ render_nav_item('main.home', 'Home') }} 
+                                {{ render_nav_item('main.biography', 'Biography') }} 
+                                {{ render_nav_item('main.albums', 'Albums') }}
+                            </div>
+                        </div>
+                        <div>
+                            {% if current_user.is_authenticated %}
+                            <div class="d-flex justify-content-between username-logout-box">
+                                <a class="btn btn-light align-self-center" href="{{ url_for('auth.logout') }}">Log Out</a>
+                                <a href="{{ url_for('main.account') }}" class="username fs-5 align-self-center">{{ current_user.username }}</a>
+                            </div>
+                            {% else %}
+                                <a class="btn btn-primary" href="{{ url_for('auth.autorization') }}" role="button">Sign In</a>
+                                <a class="btn btn-primary" href="{{ url_for('auth.registration') }}" role="button">Sign Up</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </nav>
+            </header>
+            <main>
+                {% block page_content %} {% endblock %}
+            </main>
+            <footer class>
+                <div class="text-center p-3 " style="background-color: rgba(0, 0, 0, 0.2);">
+                © 2023 Created By
+                <a class="text-dark" href="https://instagram.com/unknownukrainer">Denys Atamanchuk</a>
+                </div>
+            </footer>
+
+            <div class="toast-container position-absolute bottom-0 end-0 p-3">
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+
+                        {% if category == 'info' %}
+                            <div class="toast show bg-info" role="alert" aria-live="assertive" aria-atomic="true">
+                        {% elif category == 'warning' %}
+                            <div class="toast show bg-warning" role="alert" aria-live="assertive" aria-atomic="true">
+                        {% else %}
+                            <div class="toast show bg-info" role="alert" aria-live="assertive" aria-atomic="true">  
+                        {% endif %}
+
+                            <div class="toast-header">
+
+                                {% if category == 'info' %}
+                                    <strong class="me-auto">Info</strong>
+                                {% elif category == 'warning' %}
+                                    <strong class="me-auto">Warning</strong>
+                                {% else %}
+                                    <strong class="me-auto">Info</strong>
+                                {% endif %}
+
+                                <small class="text-muted">just now</small>
+                                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                            </div>
+                            <div class="toast-body">
+                                {{ message }}
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+                {% endwith %}
+            </div>
+        </div>
+        {% endblock %}
+
+        {% block scripts %}
+        {{ bootstrap.load_js() }} 
+        {% endblock %}
+    </body>
+</html>

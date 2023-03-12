@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% from "bootstrap5/form.html" import render_form %}
+
+{% block title%} {{super() + ' - Registration'}} {% endblock %}
+
+{% block page_content %}
+<div class="d-flex justify-content-center mt-5">
+    <div>
+        {{ render_form(form, button_style='success') }}
+    </div>
+</div>
+{% endblock %}

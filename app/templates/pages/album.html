@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title%} {{super() + ' - Album - ' + album.name }} {% endblock %}
+
+{% block page_content %}
+    <style>
+        .album {
+            height: 100%;
+        }
+
+        .info-about-album {
+            margin-top: 10px;
+        }
+
+        .short-info {
+            margin-left: 50px;
+            max-width: 500px;
+        }
+
+        .album-text {
+            margin-top: 30px;
+            text-align: justify;
+        }
+
+        .album-photo {
+            height: 300px;
+        }
+    </style>
+
+    <div class="album d-flex flex-column justify-content-start ">
+        <div class="info-about-album d-flex flex-row justify-content-center">
+            <img src="../../static/photos/albums/{{ album.id }}.jpg" class="album-photo" alt="...">
+            <div class="short-info d-flex justify-content-around flex-column">
+                <div><strong>Name:</strong> {{ album.name }}</div>
+                <div><strong>Released:</strong> {{ album.released }}</div>
+                <div><strong>Genres:</strong> {{ album.genres }}</div>
+                <div><strong>Description:</strong> {{ album.description }}</div>
+                <div><strong>Language:</strong> {{ album.language }}</div>
+            </div>
+        </div>
+        <div class="album-text">
+            {{album.text}}
+        </div>
+    </div>
+{% endblock %}

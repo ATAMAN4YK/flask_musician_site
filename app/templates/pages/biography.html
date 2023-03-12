@@ -1,0 +1,212 @@
+{% extends 'base.html' %} {% block title%} 
+
+{{super() + ' - Biography'}} {% endblock %} 
+
+{% block page_content %}
+
+<style>
+    .main-box {
+        width: 100%;
+        box-sizing: border-box
+    }
+
+    .accordion-flush {
+        flex: auto;
+        padding: 4px;
+    }
+</style>
+
+<div class="d-flex main-box">
+
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="../static/photos/bio/1.jpg" class="d-block" alt="..." />
+            </div>
+            <div class="carousel-item">
+                <img src="../static/photos/bio/2.jpg" class="d-block" alt="..." />
+            </div>
+            <div class="carousel-item">
+                <img src="../static/photos/bio/3.png" class="d-block" alt="..." />
+            </div>
+        </div>
+    </div>
+
+    <div class="accordion accordion-flush" id="accordionFlushExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingOne">
+                <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseOne"
+                    aria-expanded="false"
+                    aria-controls="flush-collapseOne"
+                >
+                    XXXTentacion
+                </button>
+            </h2>
+            <div
+                id="flush-collapseOne"
+                class="accordion-collapse collapse"
+                aria-labelledby="flush-headingOne"
+                data-bs-parent="#accordionFlushExample"
+            >
+                <div class="accordion-body">
+                    (Rapper Well Known for His Depressing, and at Times Devastating Music) - XXXTentacion was an American
+                    rapper known for his raw and daring style of music. He was musically inclined from childhood, but disliked
+                    following notes and patterns. As a child, he was influenced by the works of rappers such as Tupac Shakur
+                    and bands like Papa Roach. XXXTentacion gained popularity by releasing snippets and full versions of his
+                    songs on SoundCloud. He had worked in collaboration with rapper Ski Mask the Slump God and released
+                    several albums through their music group Members Only. His style of music did not follow any beat or notes
+                    and was known to be aggressive with a heavy mix of distorted beats. He adopted the name XXXTentacion that
+                    stands for Unknown Temptation.
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingTwo">
+                <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseTwo"
+                    aria-expanded="false"
+                    aria-controls="flush-collapseTwo"
+                >
+                    Career
+                </button>
+            </h2>
+            <div
+                id="flush-collapseTwo"
+                class="accordion-collapse collapse"
+                aria-labelledby="flush-headingTwo"
+                data-bs-parent="#accordionFlushExample"
+            >
+                <div class="accordion-body">
+                    <p>
+                        During his early teenage years, XXXTentacion had spent a year in jail due to certain activities that
+                        he got involved in. In jail, he got acquainted to rapper Ski Mask the Slump God. When they were out,
+                        they formed a group called Members Only. In 2013, he started his music career with the release of his
+                        debut song News/Flock. In 2014, he uploaded his first song in his SoundCloud account called Vice City.
+                        He also used the platform to release teasers or full versions of songs that were soon to be released
+                        or never got published.
+                    </p>
+
+                    <p>
+                        In 2015, he released two albums Members Only Vol. 1 and Members Only Vol. 2 in collaboration with rap
+                        artist Ski Mask the Slump God. In 2016, he released the song Willy Wonka Was a Child Murderer. His
+                        song Look at Me (2016) was a hit. The song was re-released in 2017 and went on to feature in the US
+                        Billboard chart hit list. In April 2017, he released three songs on SoundCloud. In May 2017, he
+                        released his first album, Revenge, comprising of eight previously released mixtape tracks.
+                        XXXTentacion’s final studio album Bad Vibes Forever was released posthumously in 2019. The same year,
+                        Members Only, Vol. 4 was also released.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingThree">
+                <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseThree"
+                    aria-expanded="false"
+                    aria-controls="flush-collapseThree"
+                >
+                    Personal Life
+                </button>
+            </h2>
+            <div
+                id="flush-collapseThree"
+                class="accordion-collapse collapse"
+                aria-labelledby="flush-headingThree"
+                data-bs-parent="#accordionFlushExample"
+            >
+                <div class="accordion-body">
+                    <p>
+                        XXX Tentacion was born Jahseh Dwayne Onfroy on 23 January 1998, in Florida. He spent his childhood
+                        growing up in areas like Pompano Beach and Lauderhill in Florida. XXX Tentacion was musically inclined
+                        from childhood and was enrolled in choir. However, he disliked following notes and also got into
+                        altercations with other children which resulted in his dismissal from the choir group.
+                    </p>
+
+                    <p>
+                        He was also known to have had a difficult relationship with his mother Cleopatra Bernard. Due to his
+                        delinquent behavior, his mother asked him to leave the house when he was a teenager. He spent the
+                        following years at his grandmother’s home and correctional home.
+                    </p>
+
+                    <p>
+                        XXXTentacion was shot and killed on 18 June 2018 during a robbery bid in Florida. He was leaving a
+                        motorsports store when two men in a SUV shot him.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingFour">
+                <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseFour"
+                    aria-expanded="false"
+                    aria-controls="flush-collapseFour"
+                >
+                    Legal Issues
+                </button>
+            </h2>
+            <div
+                id="flush-collapseFour"
+                class="accordion-collapse collapse"
+                aria-labelledby="flush-headingFour"
+                data-bs-parent="#accordionFlushExample"
+            >
+                <div class="accordion-body">
+                    <p>
+                        XXX Tentacion was involved in several legal issues. During his early teenage years, he used to get
+                        into fights with people whom he perceived as threat to his mother and subsequently got himself
+                        involved in several cases. He was involved in several illegal activities like possession of fire arms,
+                        theft, armed robbery, oxycodone possession, etc. for which he had spent a year in jail as well. In
+                        2016, he was arrested thrice; the first case was for charges of robbery and aggravated battery with
+                        deadly weapon. Later that year, he was arrested once again for aggravated battery of a pregnant
+                        victim. The third time, XXX Tentacion was arrested for violating his pre-trial agreement. He was
+                        released around April 2017.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingFive">
+                <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseFive"
+                    aria-expanded="false"
+                    aria-controls="flush-collapseFive"
+                >
+                    Death
+                </button>
+            </h2>
+            <div
+                id="flush-collapseFive"
+                class="accordion-collapse collapse"
+                aria-labelledby="flush-headingFive"
+                data-bs-parent="#accordionFlushExample"
+            >
+                <div class="accordion-body">
+                    <p>
+                        XXXTentacion was shot dead in an apparent robbery on June 18, 2018, in Broward County, Florida.
+                        According to police, he was shot and killed by two men while he was leaving a motorsports store around
+                        4 p.m.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+{% endblock %}

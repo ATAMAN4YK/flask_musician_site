@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% from "bootstrap5/form.html" import render_form %}
+
+{% block title%} {{super() + ' - Edit Album - ' + form.name.data }} {% endblock %}
+
+{% block page_content %}
+<style>
+    .edit-form {
+        min-width: 400px;
+        max-width: 500px;
+        margin-bottom: 30px;
+    }
+</style>
+
+<div class="d-flex justify-content-center mt-5 flex-column align-items-center">
+    <div class="album-name h3">Edit album - {{ form.name.data }}</div>
+    <div class="edit-form">
+        {{ render_form(form, button_style='success') }}
+    </div>
+</div>
+{% endblock %}
