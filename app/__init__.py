@@ -17,8 +17,11 @@ def crete_app(config_name):
     app.config.from_object(configs[config_name])
     configs[config_name].init_app(app)
 
-    bootstrap.init_app(app)
     db.init_app(app)
+    with app.app_context():
+        db.create_all()
+
+    bootstrap.init_app(app)
     login_manager.init_app(app)
 
     from .main import main as main_blueprint
