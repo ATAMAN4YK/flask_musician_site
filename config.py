@@ -5,6 +5,7 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 class Config:
     SECRET_KEY = os.environ.get('SECRET KEY') or 'like_secret_key'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
+    ALBUMS_PHOTOS_PATH = os.path.dirname('./') + '/app/static/photos/albums/'
 
     @staticmethod
     def init_app(app):

@@ -1,4 +1,6 @@
-from flask import render_template, request, flash, redirect, url_for, abort
+import app
+from flask import render_template, request, flash, redirect, url_for, abort, \
+    current_app
 from flask_login import login_required, current_user
 from . import main
 from .forms import AddNewAlbumForm, EditAlbumForm
@@ -57,7 +59,7 @@ def add_new_album():
 
             photo = request.files['photo']
             filename = str(new_album.id) + '.jpg'
-            photo.save('app/static/photos/albums/' + filename)
+            photo.save(current_app.config['ALBUMS_PHOTOS_PATH'] + filename)
 
             return redirect(url_for('main.albums'))
         else:
