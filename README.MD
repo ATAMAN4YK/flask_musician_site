@@ -1,4 +1,4 @@
-# *Hi there, I'm Denys and I'm Cyber Security student from Ukraine, Zhytomyr.* 👋
+# *Hi there, I'm ATAMAN4YK.* 👋
 
 ### 👉 WHY?
 
